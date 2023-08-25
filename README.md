@@ -33,7 +33,7 @@
     docker run -v ${PWD}:/scripts -p 5665:5665 -it ghcr.io/grafana/xk6-dashboard:latest run --out "json=/scripts/test_result_$(Get-Date -Format 'yyyyMMddHHmmss').json" /scripts/script.js
     ```
     
-    透過 json 察看結果
+    透過 json 察看結果，執行指令後打開網址 http://127.0.0.1:5665
     
     ```powershell
     docker run -v ${PWD}:/scripts -p 5665:5665 -it ghcr.io/grafana/xk6-dashboard:latest dashboard replay /scripts/test_result_日期.json
@@ -55,7 +55,7 @@
     ./k6 run --out json=test_result_$(Get-Date -Format 'yyyyMMddHHmmss').json script.js
     ```
 
-    透過 json 察看結果
+    透過 json 察看結果，執行指令後打開網址 http://127.0.0.1:5665
 
     ```powershell
     ./k6 dashboard replay test_result_日期.json
