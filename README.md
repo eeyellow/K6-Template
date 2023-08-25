@@ -27,32 +27,44 @@
 
     - 使用 docker
     
-    執行
+    執行產生json
     
     ```powershell
     docker run -v ${PWD}:/scripts -p 5665:5665 -it ghcr.io/grafana/xk6-dashboard:latest run --out "json=/scripts/test_result_$(Get-Date -Format 'yyyyMMddHHmmss').json" /scripts/script.js
     ```
     
-    察看結果
+    透過 json 察看結果
     
     ```powershell
     docker run -v ${PWD}:/scripts -p 5665:5665 -it ghcr.io/grafana/xk6-dashboard:latest dashboard replay /scripts/test_result_日期.json
+    ```
+
+    執行並匯出 html
+
+    ```powershell
+    docker run -v ${PWD}:/scripts -p 5665:5665 -it ghcr.io/grafana/xk6-dashboard:latest run --out 'dashboard=report=/scripts/test-report.html' /scripts/script.js
     ```
 
     - 一般安裝
     
     從 [這裡](https://github.com/grafana/xk6-dashboard/releases/) 下載後解壓縮放到與 script 相同路徑
     
-    執行
+    執行產生json
 
     ```powershell
     ./k6 run --out json=test_result_$(Get-Date -Format 'yyyyMMddHHmmss').json script.js
     ```
 
-    察看結果
+    透過 json 察看結果
 
     ```powershell
     ./k6 dashboard replay test_result_日期.json
+    ```
+
+    執行並匯出 html
+
+    ```powershell
+    ./k6 run --out dashboard=report=test-report.html script.js
     ```
 
 - 選項二: 使用原版 K6 搭配 K6 HTML Report
