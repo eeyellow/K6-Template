@@ -6,43 +6,40 @@ import { getAntiForgeryToken } from "./util.js";
 import { Trend } from 'k6/metrics';
 
 // 為每個 request 設定一個 Trend
-const indexResTrend = new Trend('_indexRes_duration');
-const blogByLogIDResTrend = new Trend('_blogByLogIDRes_duration');
-const blogResTrend = new Trend('_blogRes_duration');
-const mapResTrend = new Trend('_mapRes_duration');
-const producerSearchResTrend = new Trend('_producerSearchRes_duration');
-const producerSearchDetailResTrend = new Trend('_producerSearchDetailRes_duration');
-const batchIndexResTrend = new Trend('_batchIndexRes_duration');
-const postBatchIndexResTrend = new Trend('_postBatchIndexRes_duration');
-const pageResTrend = new Trend('_pageRes_duration');
-const linksResTrend = new Trend('_linksRes_duration');
-const privacyResTrend = new Trend('_privacyRes_duration');
-const openDeclarationResTrend = new Trend('_openDeclarationRes_duration');
-const faqResTrend = new Trend('_faqRes_duration');
-const postFaqResTrend = new Trend('_postFaqRes_duration');
-const disableDataResTrend = new Trend('_disableDataRes_duration');
-const postDisableDataResTrend = new Trend('_postDisableDataRes_duration');
-const applyResTrend = new Trend('_applyRes_duration');
-const applyQueryResTrend = new Trend('_applyQueryRes_duration');
-const forgetResTrend = new Trend('_forgetRes_duration');
-const reportResTrend = new Trend('_reportRes_duration');
-const publicNewsResTrend = new Trend('_publicNewsRes_duration');
-const publicNewsByIDResTrend = new Trend('_publicNewsByIDRes_duration');
-const postPublicNewsResTrend = new Trend('_postPublicNewsRes_duration');
-const producerAreaResTrend = new Trend('_producerAreaRes_duration');
-const newsIndexResTrend = new Trend('_newsIndexRes_duration');
-const newsIndexByIDResTrend = new Trend('_newsIndexByIDRes_duration');
-const availableCropIndexResTrend = new Trend('_availableCropIndexRes_duration');
-const postAvailableCropIndexResTrend = new Trend('_postAvailableCropIndexRes_duration');
-const fileDownloadResTrend = new Trend('_fileDownloadRes_duration');
-const matchmakingResTrend = new Trend('_matchmakingRes_duration');
-const matchmakingViewResTrend = new Trend('_matchmakingViewRes_duration');
-const postMatchmakingResTrend = new Trend('_postMatchmakingRes_duration');
-const auditorAreaResTrend = new Trend('_auditorAreaRes_duration');
-const onlineAccountApplyResTrend = new Trend('_onlineAccountApplyRes_duration');
-
-
-
+const indexResTrend = new Trend('_indexRes_duration', true);
+const blogByLogIDResTrend = new Trend('_blogByLogIDRes_duration', true);
+const blogResTrend = new Trend('_blogRes_duration', true);
+const mapResTrend = new Trend('_mapRes_duration', true);
+const producerSearchResTrend = new Trend('_producerSearchRes_duration', true);
+const producerSearchDetailResTrend = new Trend('_producerSearchDetailRes_duration', true);
+const batchIndexResTrend = new Trend('_batchIndexRes_duration', true);
+const postBatchIndexResTrend = new Trend('_postBatchIndexRes_duration', true);
+const pageResTrend = new Trend('_pageRes_duration', true);
+const linksResTrend = new Trend('_linksRes_duration', true);
+const privacyResTrend = new Trend('_privacyRes_duration', true);
+const openDeclarationResTrend = new Trend('_openDeclarationRes_duration', true);
+const faqResTrend = new Trend('_faqRes_duration', true);
+const postFaqResTrend = new Trend('_postFaqRes_duration', true);
+const disableDataResTrend = new Trend('_disableDataRes_duration', true);
+const postDisableDataResTrend = new Trend('_postDisableDataRes_duration', true);
+const applyResTrend = new Trend('_applyRes_duration', true);
+const applyQueryResTrend = new Trend('_applyQueryRes_duration', true);
+const forgetResTrend = new Trend('_forgetRes_duration', true);
+const reportResTrend = new Trend('_reportRes_duration', true);
+const publicNewsResTrend = new Trend('_publicNewsRes_duration', true);
+const publicNewsByIDResTrend = new Trend('_publicNewsByIDRes_duration', true);
+const postPublicNewsResTrend = new Trend('_postPublicNewsRes_duration', true);
+const producerAreaResTrend = new Trend('_producerAreaRes_duration', true);
+const newsIndexResTrend = new Trend('_newsIndexRes_duration', true);
+const newsIndexByIDResTrend = new Trend('_newsIndexByIDRes_duration', true);
+const availableCropIndexResTrend = new Trend('_availableCropIndexRes_duration', true);
+const postAvailableCropIndexResTrend = new Trend('_postAvailableCropIndexRes_duration', true);
+const fileDownloadResTrend = new Trend('_fileDownloadRes_duration', true);
+const matchmakingResTrend = new Trend('_matchmakingRes_duration', true);
+const matchmakingViewResTrend = new Trend('_matchmakingViewRes_duration', true);
+const postMatchmakingResTrend = new Trend('_postMatchmakingRes_duration', true);
+const auditorAreaResTrend = new Trend('_auditorAreaRes_duration', true);
+const onlineAccountApplyResTrend = new Trend('_onlineAccountApplyRes_duration', true);
 
 // 壓測情境設定
 export const options = {
